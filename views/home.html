@@ -1,0 +1,36 @@
+{{template "header"}}
+
+<body>
+
+    <div class = "container">
+        <div class="col-md-9">
+            {{range .Topic}}
+            <div class="page-header">
+                <h1><a href="/topic/view/{{.Id}}">{{.Title}}</a> </h1>
+                <h6 class="text-muted">文章发表于{{.Created}}，共有{{.view}}次阅读，{{.ReplyCount}}个评论</h6>
+                <p>
+                    {{.comment}}
+                </p>
+            </div>
+            {{end}}
+        </div>
+
+        <div class="col-md-9">
+            <h3>文章分类</h3>
+            <ul>
+                {{range .Categories}}
+                    <li><a href="/?cate={{.Title}}">{{.Title}}</a></li>
+                {{end}}
+            </ul>
+        </div>
+
+
+
+
+    </div>
+
+
+
+
+
+</body>
